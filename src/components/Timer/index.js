@@ -48,9 +48,8 @@ class Timer extends Component {
   }
 
   clearTimer = () => {
-    const { onChange } = this.props;
     clearInterval(this.interval);
-    onChange(0)
+
     this.setState({
       time: 0
     })
