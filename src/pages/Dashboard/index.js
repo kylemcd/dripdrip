@@ -9,13 +9,22 @@ import {
   Dock
 } from '../../components';
 
+import {
+  WaterProvider,
+  DockProvider
+} from '../../context';
+
 class Dashboard extends Component {
   render() {
     return (
-      <PageContainer>
-        <Cup/>
-        <Dock/>
-      </PageContainer>
+      <DockProvider>
+        <WaterProvider>
+          <PageContainer>
+            <Cup/>
+            <Dock/>
+          </PageContainer>
+        </WaterProvider>
+      </DockProvider>
     );
   }
 }

@@ -1,9 +1,10 @@
 import React, { Component, createContext } from 'react';
 
-const DockContext = createContext({
+export const DockContext = createContext({
   isModalVisible: '',
   activePanel: '',
-  toggleModal: () => {}
+  toggleModal: () => {},
+  closeModal: () => {}
 })
 
 export class DockProvider extends Component {
@@ -21,14 +22,20 @@ export class DockProvider extends Component {
         activePanel,
         isModalVisible
       })
-    }
-    
+    } 
+  }
+
+  closeModal = () => {
+    this.setState(({
+      isModalVisible: false
+    }))
   }
 
   state = {
     isModalVisible: false,
     activePanel: null,
-    toggleModal: this.toggleModal
+    toggleModal: this.toggleModal,
+    closeModal: this.closeModal
   }
 
   render(){
