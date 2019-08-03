@@ -2,6 +2,7 @@
   "name": "dripdrip",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dripdrip.app",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "polished": "^3.4.1",
