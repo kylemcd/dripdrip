@@ -25,7 +25,7 @@ class ShowerPanel extends Component {
     return (
       <Fragment>
         <Timer 
-          startTime={600}
+          startTime={0}
           onSubtract={this.subtractFromTotal.bind(this)}
         />
       </Fragment>

@@ -24,7 +24,7 @@ class SinkPanel extends Component {
     return (
       <Fragment>
         <Timer
-          startTime={400}
+          startTime={0}
           onSubtract={this.subtractFromTotal.bind(this)}
         />
       </Fragment>
