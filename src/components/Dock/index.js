@@ -18,7 +18,8 @@ import {
 import { 
   Modal,
   SinkPanel,
-  ShowerPanel
+  ShowerPanel,
+  BottlePanel
 } from '../../components';
 
 import {  
@@ -35,7 +36,7 @@ class Dock extends Component {
             <Modal isVisible={isModalVisible}>
               {activePanel === 'Shower' && <ShowerPanel/>}
               {activePanel === 'Sink' && <SinkPanel/>}
-              {activePanel === 'Bottle' && 'Bottle'}
+              {activePanel === 'Bottle' && <BottlePanel/>}
               {activePanel === 'Custom' && 'Custom'}
             </Modal>
             <DockContainer>

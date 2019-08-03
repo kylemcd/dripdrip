@@ -16,7 +16,6 @@ class ShowerPanel extends Component {
 
     const gallonsPerSecond = 0.035;
 
-    
     const waterUsage = time * gallonsPerSecond;
 
     updateWaterAmount(waterUsage);

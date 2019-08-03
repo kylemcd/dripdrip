@@ -88,5 +88,4 @@ export const SubtractButton = styled.button`
     opacity: 0.8;
     outline: none;
   }
-
 `;
