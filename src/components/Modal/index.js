@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import { 
-  Container
+  Container,
+  CenteringContainer
 } from './styled';
 
 class Modal extends Component {
@@ -9,7 +10,9 @@ class Modal extends Component {
     const { isVisible, children } = this.props;
     return (
       <Container isVisible={isVisible}>
-        {children}
+        <CenteringContainer>
+          {children}
+        </CenteringContainer>
       </Container>
     );
   }

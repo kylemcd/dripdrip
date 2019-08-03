@@ -15,7 +15,7 @@ export const DockContainer = styled.div`
   display: flex;
   flex-basis: 100%;
   justify-content: space-around;
-  max-height: 90px;
+  height: calc(90px - 2em);
   max-width: 800px;
   padding: 1em 0;
   position: relative;

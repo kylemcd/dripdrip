@@ -9,11 +9,15 @@ export const Container = styled.div`
   position: absolute;
   transform: translateY(100vh);
   transition: transform 0.3s ease-in-out;
-  top: 60px;
+  top: 20px;
   width: 100%;
   z-index: ${zIndexMap.modal};
 
   ${props => props.isVisible && css`
     transform: translateY(0vh);
   `}
+`;
+
+export const CenteringContainer = styled.div`
+  height: calc(100% - 90px);
 `;

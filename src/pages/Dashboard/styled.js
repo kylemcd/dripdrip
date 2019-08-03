@@ -5,5 +5,5 @@ export const PageContainer = styled.div`
   background-color: ${colors.blackRock};
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 `;

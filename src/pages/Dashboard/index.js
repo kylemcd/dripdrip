@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Div100vh from 'react-div-100vh'
 
 import { 
   PageContainer
@@ -19,10 +20,12 @@ class Dashboard extends Component {
     return (
       <DockProvider>
         <WaterProvider>
-          <PageContainer>
-            <Cup/>
-            <Dock/>
-          </PageContainer>
+          <Div100vh>
+            <PageContainer>
+              <Cup/>
+              <Dock/>
+            </PageContainer>
+          </Div100vh>
         </WaterProvider>
       </DockProvider>
     );
