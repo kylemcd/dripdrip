@@ -18,6 +18,7 @@ export const DockContainer = styled.div`
   height: calc(90px - 2em);
   max-width: 800px;
   padding: 1em 0;
+  margin-bottom: 1em;
   position: relative;
   z-index: ${zIndexMap.dock};
 `;
