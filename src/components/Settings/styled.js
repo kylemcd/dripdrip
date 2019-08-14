@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
-import { zIndexMap } from '../../utils';
+import { colors, zIndexMap } from '../../utils';
 
 export const SettingsButton = styled.button`
   appearance: none;
@@ -72,4 +72,33 @@ export const CloseButton = styled.button`
 export const Container = styled.div`
   margin-top: 50px;
   padding: 0 24px;
+`;
+
+export const Select = styled.select`
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='270' height='240'%3E%3Cpath d='M5,5H265L135,230' fill='%23282C37' /%3E%3C/svg%3E");
+  background-position: 93% 50%;
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+  background-color: transparent;
+  border: 1px solid ${colors.solitude};
+  font-size: 14px;
+  padding: 8px 24px 8px 8px;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    border-color: ${colors.summerSky};
+    outline: none;
+  }
+`;
+
+export const Label = styled.label`
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+`;
+
+export const FormGroup = styled.div`
+
 `;

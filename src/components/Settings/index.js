@@ -8,7 +8,10 @@ import {
   SettingsButton,
   Modal,
   CloseButton,
-  Container
+  Container,
+  Select,
+  Label,
+  FormGroup
 } from './styled';
 
 import {
@@ -53,10 +56,15 @@ export class Settings extends Component {
             <ScreenReader>Close</ScreenReader>
           </CloseButton>
           <Container>
-            <select name="measurement" onChange={this.changeMeasurement.bind(this)}>
-              <option value="gallons" default>Gallons</option>
-              <option value="liters">Liters</option>
-            </select>
+            <FormGroup>
+              <Label htmlFor="measurement">
+                Measurement Value
+              </Label>
+              <Select name="measurement" onChange={this.changeMeasurement.bind(this)}>
+                <option value="gallons" default>Gallons</option>
+                <option value="liters">Liters</option>
+              </Select>
+            </FormGroup>
           </Container>
         </Modal>
       </Fragment>
