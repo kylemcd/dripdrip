@@ -45,10 +45,16 @@ export const CheckboxLabel = styled.label`
 `;
 
 export const Label = styled.button`
+  appearance: none;
+  border: none;
   font-size: 14px;
   text-transform: uppercase;
   text-align: left;
   width: 100%;
+
+  &:focus {
+    outline: none;
+  }
 
   ${props => props.right && css`
     text-align: right;

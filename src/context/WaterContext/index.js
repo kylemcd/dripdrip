@@ -3,18 +3,27 @@ import React, { Component, createContext } from 'react';
 export const WaterContext = createContext({
   waterRemaining: '',
   waterTotal: '',
-  updateWaterAmount: () => {}
+  measurement: '',
+  updateWaterAmount: () => {},
+  changeMeasurement : () => {}
 });
 
 export class WaterProvider extends Component {
 
   updateWaterAmount = (gallons) => {
-    const { waterRemaining : prevWaterRemaining } = this.state;
+    const { waterRemaining : prevWaterRemaining, measurement } = this.state;
 
-    const waterRemaining = Math.round((prevWaterRemaining - gallons) * 10) / 10;
+    let waterRemaining = Math.round((prevWaterRemaining - gallons) * 10) / 10;
 
     this.setState({
       waterRemaining
+    })
+  }
+
+  changeMeasurement = (measurement) => {
+    console.log(measurement)
+    this.setState({
+      measurement
     })
   }
 
@@ -22,7 +31,9 @@ export class WaterProvider extends Component {
     waterRemaining: 48,
     // Update this with beginning user flow
     waterTotal: 50,
-    updateWaterAmount: this.updateWaterAmount
+    measurement: 'gallons',
+    updateWaterAmount: this.updateWaterAmount,
+    changeMeasurement: this.changeMeasurement 
   }
 
   render() {

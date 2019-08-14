@@ -7,7 +7,8 @@ import {
 
 import {
   Cup,
-  Dock
+  Dock,
+  Settings
 } from '../../components';
 
 import {
@@ -22,6 +23,7 @@ class Dashboard extends Component {
         <WaterProvider>
           <Div100vh>
             <PageContainer>
+              <Settings/>
               <Cup/>
               <Dock/>
             </PageContainer>

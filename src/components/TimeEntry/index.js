@@ -21,7 +21,7 @@ export class TimeEntry extends Component {
     const { onSubtract } = this.props;
     const { closeModal } = this.context
 
-    const time = (parseInt(this.minutes.value, 10)* 60) + parseInt(this.seconds.value, 10);
+    const time = (parseInt((this.minutes.value ? this.minutes.value : 0), 10)* 60) + parseInt((this.seconds.value ? this.seconds.value : 0), 10);
     onSubtract(time);
 
     closeModal();

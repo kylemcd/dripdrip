@@ -25,16 +25,28 @@ class Cup extends Component {
     return percentageRemaining;
   }
 
+  formatMeasurement = (waterRemaining) => {
+    const { measurement } = this.context;
+
+    if(measurement === 'liters'){
+      waterRemaining = Math.round(waterRemaining * 3.78541);
+    }
+
+    return waterRemaining;
+  }
+
   render() {
     return (
       <WaterConsumer>
-        {({ waterRemaining }) => (
+        {({ waterRemaining, measurement }) => (
           <Container>
             <Water percentageRemaining={this.calculatePercentage()}>
               <TextContainer>
                 <NumberContainer>
-                  <Number>{waterRemaining}</Number>
-                  <Measurement>GAL</Measurement>
+                  <Number>{this.formatMeasurement(waterRemaining)}</Number>
+                  <Measurement>
+                    {measurement === 'liters' ? 'L' : 'GAL'}
+                  </Measurement>
                 </NumberContainer>
                 <SupportingText>
                   Remaining

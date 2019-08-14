@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors, zIndexMap } from '../../utils';
 
 export const Container = styled.div`
@@ -27,15 +27,23 @@ export const DockItem = styled.button`
   align-items: center;
   border: none;
   background: transparent;
+  border-radius: 12px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 72px;
   justify-content: space-between;
+  padding: 8px;
+  transition: background-color 0.3s ease-in-out;
+  width: 72px;
 
   &:hover, &:focus {
     outline: none;
   }
+
+  ${props => props.active && css`
+    background-color: ${colors.nepal}
+  `}
 `;
 
 export const IconContainer = styled.div`

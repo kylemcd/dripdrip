@@ -19,7 +19,8 @@ import {
   Modal,
   SinkPanel,
   ShowerPanel,
-  BottlePanel
+  BottlePanel,
+  CustomPanel
 } from '../../components';
 
 import {  
@@ -37,10 +38,12 @@ class Dock extends Component {
               {activePanel === 'Shower' && <ShowerPanel/>}
               {activePanel === 'Sink' && <SinkPanel/>}
               {activePanel === 'Bottle' && <BottlePanel/>}
-              {activePanel === 'Custom' && 'Custom'}
+              {activePanel === 'Custom' && <CustomPanel/>}
             </Modal>
             <DockContainer>
-              <DockItem onClick={() =>  toggleModal({
+              <DockItem 
+                active={activePanel === 'Shower' && isModalVisible}
+                onClick={() =>  toggleModal({
                   isModalVisible: !isModalVisible, 
                   activePanel: 'Shower'
                 })}>
@@ -51,7 +54,9 @@ class Dock extends Component {
                   Shower
                 </Label>
               </DockItem>
-              <DockItem onClick={() =>  toggleModal({
+              <DockItem 
+                active={activePanel === 'Sink' && isModalVisible}
+                onClick={() =>  toggleModal({
                   isModalVisible: !isModalVisible, 
                   activePanel: 'Sink'
                 })}>
@@ -62,7 +67,9 @@ class Dock extends Component {
                   Sink
                 </Label>
               </DockItem>
-              <DockItem onClick={() =>  toggleModal({
+              <DockItem 
+                active={activePanel === 'Bottle' && isModalVisible}
+                onClick={() =>  toggleModal({
                   isModalVisible: !isModalVisible, 
                   activePanel: 'Bottle'
                 })}>
@@ -73,7 +80,9 @@ class Dock extends Component {
                   Bottle
                 </Label>
               </DockItem>
-              <DockItem onClick={() =>  toggleModal({
+              <DockItem 
+                active={activePanel === 'Custom' && isModalVisible}
+                onClick={() =>  toggleModal({
                   isModalVisible: !isModalVisible, 
                   activePanel: 'Custom'
                 })}>
