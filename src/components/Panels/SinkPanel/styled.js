@@ -8,3 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
 `;
+
+export const EntryContainer = styled.div`
+  height: 300px;
+`;

@@ -11,7 +11,8 @@ import {
 } from '../../../context';
 
 import {
-  Container
+  Container,
+  EntryContainer
 } from './styled';
 
 class SinkPanel extends Component {
@@ -43,17 +44,19 @@ class SinkPanel extends Component {
         <Toggle
           onChange={this.handleToggleChange.bind(this)}
           labels={{first: 'Manual', last: 'Timer'}}
-        />
-        {!isChecked ? (
-          <Timer 
-            startTime={0}
-            onSubtract={this.subtractFromTotal.bind(this)}
           />
-        ) : (
-          <TimeEntry
-            onSubtract={this.subtractFromTotal.bind(this)}
-          />
-        )}
+        <EntryContainer>
+          {!isChecked ? (
+            <Timer 
+              startTime={0}
+              onSubtract={this.subtractFromTotal.bind(this)}
+            />
+          ) : (
+            <TimeEntry
+              onSubtract={this.subtractFromTotal.bind(this)}
+            />
+          )}
+        </EntryContainer>
       </Container>
     );
   }
