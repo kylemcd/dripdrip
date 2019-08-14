@@ -1,14 +1,24 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 
 import {
-  Timer
+  Timer,
+  Toggle,
+  TimeEntry
 } from '../../../components';
 
 import {
   WaterContext
 } from '../../../context';
 
+import {
+  Container
+} from './styled';
+
 class SinkPanel extends Component {
+
+  state = {
+    isChecked: false
+  }
 
   subtractFromTotal = (time) => {
     const { updateWaterAmount } = this.context;
@@ -20,14 +30,31 @@ class SinkPanel extends Component {
     updateWaterAmount(waterUsage);
   }
 
+  handleToggleChange = (isChecked) => {
+    this.setState({
+      isChecked
+    })
+  }
+
   render() {
+    const { isChecked } = this.state;
     return (
-      <Fragment>
-        <Timer
-          startTime={0}
-          onSubtract={this.subtractFromTotal.bind(this)}
+      <Container>
+        <Toggle
+          onChange={this.handleToggleChange.bind(this)}
+          labels={{first: 'Manual', last: 'Timer'}}
         />
-      </Fragment>
+        {!isChecked ? (
+          <Timer 
+            startTime={0}
+            onSubtract={this.subtractFromTotal.bind(this)}
+          />
+        ) : (
+          <TimeEntry
+            onSubtract={this.subtractFromTotal.bind(this)}
+          />
+        )}
+      </Container>
     );
   }
 }

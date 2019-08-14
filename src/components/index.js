@@ -3,6 +3,8 @@ export { default as Dock } from './Dock';
 export { default as Modal } from './Modal';
 export { default as Timer } from './Timer';
 export { default as Counter } from './Counter';
+export { default as Toggle } from './Toggle';
+export { default as TimeEntry } from './TimeEntry';
 
 // Panels
 export { default as ShowerPanel } from './Panels/ShowerPanel';
