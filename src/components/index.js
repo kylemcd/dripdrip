@@ -6,6 +6,7 @@ export { default as Counter } from './Counter';
 export { default as Toggle } from './Toggle';
 export { default as TimeEntry } from './TimeEntry';
 export { default as ScreenReader } from './ScreenReader';
+export { default as CustomEntry } from './CustomEntry';
 
 // Panels
 export { default as ShowerPanel } from './Panels/ShowerPanel';

@@ -11,7 +11,7 @@ export const WaterContext = createContext({
 export class WaterProvider extends Component {
 
   updateWaterAmount = (gallons) => {
-    const { waterRemaining : prevWaterRemaining, measurement } = this.state;
+    const { waterRemaining : prevWaterRemaining } = this.state;
 
     let waterRemaining = Math.round((prevWaterRemaining - gallons) * 10) / 10;
 
