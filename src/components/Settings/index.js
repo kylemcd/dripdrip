@@ -11,7 +11,9 @@ import {
   Container,
   Select,
   Label,
-  FormGroup
+  FormGroup,
+  Field,
+  Button
 } from './styled';
 
 import {
@@ -43,8 +45,22 @@ export class Settings extends Component {
     changeMeasurement(value);
   }
 
+  updateTotalAmount = (event) => {
+    const value = event.target.value;
+    const { updateTotalAmount } = this.context;
+
+    updateTotalAmount(value);
+  } 
+
+  reset = () => {
+    const { reset } = this.context;
+
+    reset();
+  }
+
   render() {
     const { isOpen } = this.state;
+    const { measurement, waterTotal } = this.context;
     return (
       <Fragment>
         <SettingsButton onClick={this.openModal.bind(this)}>
@@ -60,10 +76,25 @@ export class Settings extends Component {
               <Label htmlFor="measurement">
                 Measurement Value
               </Label>
-              <Select name="measurement" onChange={this.changeMeasurement.bind(this)}>
+              <Select name="measurement" value={measurement} onChange={this.changeMeasurement.bind(this)}>
                 <option value="gallons" default>Gallons</option>
                 <option value="liters">Liters</option>
               </Select>
+            </FormGroup>
+            <FormGroup>
+              <Label htmlFor="measurement">
+                Starting Water Total
+              </Label>
+              <Field type="text" value={waterTotal} onChange={this.updateTotalAmount.bind(this)}/>
+            </FormGroup>
+
+            <FormGroup>
+              <Label htmlFor="measurement">
+                Reset to a new day
+              </Label>
+              <Button red onClick={this.reset.bind(this)}>
+                Reset
+              </Button>
             </FormGroup>
           </Container>
         </Modal>

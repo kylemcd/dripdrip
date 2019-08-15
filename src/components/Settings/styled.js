@@ -100,5 +100,48 @@ export const Label = styled.label`
 `;
 
 export const FormGroup = styled.div`
+  margin-bottom: 8px;
+`;
 
+export const Field = styled.input`
+  appearance: none;
+  border: 1px solid ${colors.solitude};
+  font-size: 14px;
+  padding: 8px;
+  text-align: left;
+`;
+
+export const Button = styled.button`
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 4px;
+  padding: 8px 16px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover, &:focus {
+    opacity: 0.8;
+    outline: none;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  ${props => props.green && css`
+    background-color: #5CAB7D;
+    border-bottom: 2px solid #5A9367;
+  `};
+
+  ${props => props.red && css`
+    background-color: #EC6A5C;
+    border-bottom: 2px solid #C65146;
+  `};
+
+  ${props => props.yellow && css`
+    background-color: #fdc23e;
+    border-bottom: 2px solid #f9a11b;
+    color: ${colors.blackRock};
+  `};
 `;
