@@ -56,7 +56,7 @@ export const CloseButton = styled.button`
   background-size: 100%;
   border: none;
   cursor: pointer;
-  height: 18px;
+  height: 22px;
   opacity: 0.9;
   position: absolute;
   right: 1em;
@@ -77,13 +77,13 @@ export const Container = styled.div`
 export const Select = styled.select`
   appearance: none;
   background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='270' height='240'%3E%3Cpath d='M5,5H265L135,230' fill='%23282C37' /%3E%3C/svg%3E");
-  background-position: 93% 50%;
+  background-position: 90% 50%;
   background-repeat: no-repeat;
   background-size: 6px 6px;
   background-color: transparent;
   border: 1px solid ${colors.solitude};
   font-size: 14px;
-  padding: 8px 24px 8px 8px;
+  padding: 8px 28px 8px 8px;
   text-align: left;
 
   &:hover,
