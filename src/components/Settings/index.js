@@ -86,7 +86,7 @@ export class Settings extends Component {
               <Label htmlFor="measurement">
                 Starting Water Total
               </Label>
-              <Field type="text" value={waterTotal} onChange={this.updateTotalAmount.bind(this)}/>
+              <Field type="number" value={waterTotal} onChange={this.updateTotalAmount.bind(this)} step="0.01"/>
             </FormGroup>
 
             <FormGroup>
