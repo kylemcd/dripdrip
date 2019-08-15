@@ -50,7 +50,7 @@ class Dock extends Component {
                 <IconContainer>
                   <Shower/>
                 </IconContainer>
-                <Label>
+                <Label active={activePanel === 'Shower' && isModalVisible}>
                   Shower
                 </Label>
               </DockItem>
@@ -63,7 +63,7 @@ class Dock extends Component {
                 <IconContainer>
                   <Sink/>
                 </IconContainer>
-                <Label>
+                <Label active={activePanel === 'Sink' && isModalVisible}>
                   Sink
                 </Label>
               </DockItem>
@@ -76,7 +76,7 @@ class Dock extends Component {
                 <IconContainer>
                   <Bottle/>
                 </IconContainer>
-                <Label>
+                <Label active={activePanel === 'Bottle' && isModalVisible}>
                   Bottle
                 </Label>
               </DockItem>
@@ -89,7 +89,7 @@ class Dock extends Component {
                 <IconContainer>
                   <Droplet/>
                 </IconContainer>
-                <Label>
+                <Label active={activePanel === 'Custom' && isModalVisible}>
                   Custom
                 </Label>
               </DockItem>
