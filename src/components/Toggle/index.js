@@ -17,8 +17,9 @@ export class Toggle extends Component {
   handleChange = (value) => {
     const { isChecked } = this.state;
     const { onChange } = this.props;
+    
     this.setState({
-      isChecked: (value === true || value === false ? value : !isChecked)
+      isChecked: !isChecked
     })
     onChange(!isChecked)
   }
@@ -30,23 +31,17 @@ export class Toggle extends Component {
       <Container>
         <CheckboxLabel
           isChecked={isChecked}
-          onClick={this.handleChange.bind(this)}
         >
-          {isChecked ? (
-            <Label
-            >
-              {labels.first}
-            </Label>
-          ) : (
-            <Label
-              right
-            >
-              {labels.last}
-            </Label>
-          )}
+          <Label active={!isChecked}>
+            {labels.first}
+          </Label>
+          <Label active={isChecked}>
+            {labels.last}
+          </Label>
           <Checkbox 
             type="Checkbox" 
             isChecked={isChecked}
+            value={isChecked}
             onChange={this.handleChange.bind(this)} 
           />
         </CheckboxLabel>

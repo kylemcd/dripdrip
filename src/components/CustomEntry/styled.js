@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { colors } from '../../utils';
 
 export const Container = styled.div`
@@ -16,20 +16,37 @@ export const Field = styled.input`
   font-size: 24px;
   padding: 8px;
   text-align: center;
+
+  &:hover,
+  &:focus {
+    border-color: ${colors.summerSky};
+    outline: none;
+  }
 `;
 
 export const Label = styled.label`
-  margin-bottom: 4px;
+  margin-bottom: 1em;
+`;
+
+const SubtractButtonAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 `;
 
 export const SubtractButton = styled.button`
-  background-color: ${colors.summerSky};
-  border: none;
+  animation: ${SubtractButtonAnimation} 0.8s;
+  background-color: white;
+  border: 1px solid #56A902;
   border-radius: 8px;
-  color: ${colors.white};
+  color: #56A902;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 1.5em;
   padding: 8px 16px;
   transition: background-color 0.2s ease-in-out;
 

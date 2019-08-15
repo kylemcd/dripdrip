@@ -49,8 +49,8 @@ export const DockItem = styled.button`
 export const IconContainer = styled.div`
   align-items: center;
   display: flex;
-
   justify-content: center;
+  margin-left: 0.5em;
 
   svg {
     height: 30px;

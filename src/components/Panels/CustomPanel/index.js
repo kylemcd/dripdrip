@@ -5,7 +5,8 @@ import {
 } from '../../../components';
 
 import {
-  Container
+  Container,
+  EntryContainer
 } from './styled';
 
 import {
@@ -24,10 +25,12 @@ export class CustomPanel extends Component {
     const { measurement } = this.context;
     return (
       <Container>
-        <CustomEntry
-          measurement={measurement}
-          onSubtract={this.subtractFromTotal.bind(this)}
-        />
+        <EntryContainer>
+          <CustomEntry
+            measurement={measurement}
+            onSubtract={this.subtractFromTotal.bind(this)}
+          />
+        </EntryContainer>
       </Container>
     );
   }

@@ -56,12 +56,12 @@ export const CloseButton = styled.button`
   background-size: 100%;
   border: none;
   cursor: pointer;
-  height: 30px;
+  height: 18px;
   opacity: 0.9;
   position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 30px;
+  right: 1em;
+  top: 1em;
+  width: 18px;
 
   &:focus,
   &:hover {
@@ -95,12 +95,12 @@ export const Select = styled.select`
 
 export const Label = styled.label`
   display: block;
-  font-size: 12px;
-  margin-bottom: 4px;
+  font-size: 14px;
+  margin-bottom: 0.5em;
 `;
 
 export const FormGroup = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 1.5em;
 `;
 
 export const Field = styled.input`
@@ -112,13 +112,13 @@ export const Field = styled.input`
 `;
 
 export const Button = styled.button`
-  border: none;
+  background-color: transparent;
+  border: 1px solid ${colors.blackRock};
   border-radius: 8px;
-  cursor: pointer;
+  color: ${colors.blackRock};
   font-size: 14px;
-  margin-right: 4px;
+
   padding: 8px 16px;
-  transition: background-color 0.2s ease-in-out;
 
   &:hover, &:focus {
     opacity: 0.8;
@@ -135,8 +135,8 @@ export const Button = styled.button`
   `};
 
   ${props => props.red && css`
-    background-color: #EC6A5C;
-    border-bottom: 2px solid #C65146;
+    border-color: #f15c5c;
+    color: #f15c5c;
   `};
 
   ${props => props.yellow && css`
@@ -144,4 +144,12 @@ export const Button = styled.button`
     border-bottom: 2px solid #f9a11b;
     color: ${colors.blackRock};
   `};
+`;
+
+export const Subtext = styled.span`
+  color: ${colors.blackRock};
+  display: block;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 0.5em;
 `;

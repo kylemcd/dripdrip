@@ -13,7 +13,8 @@ import {
   Label,
   FormGroup,
   Field,
-  Button
+  Button,
+  Subtext
 } from './styled';
 
 import {
@@ -93,8 +94,11 @@ export class Settings extends Component {
                 Reset to a new day
               </Label>
               <Button red onClick={this.reset.bind(this)}>
-                Reset
+                Reset Data
               </Button>
+              <Subtext>
+                Warning, no going back after you click this.
+              </Subtext>
             </FormGroup>
           </Container>
         </Modal>

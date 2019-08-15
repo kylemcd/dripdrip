@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { colors } from '../../utils';
 
 export const Container = styled.div`
@@ -32,19 +32,26 @@ export const TimeIndicator = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+  align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 1.5em;
 `;
 
 export const TimerButton = styled.button`
-  border: none;
-  border-radius: 8px;
+  background: white;
+  border: 2px solid ${colors.summerSky};
+  border-radius: 50%;
   cursor: pointer;
+  color: ${colors.summerSky};
   font-size: 14px;
+  font-weight: bold;
   margin-right: 4px;
-  padding: 8px 16px;
-  transition: background-color 0.2s ease-in-out;
+  padding: 8px 8px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  height: 80px;
+  width: 80px;
 
   &:hover, &:focus {
     opacity: 0.8;
@@ -55,31 +62,55 @@ export const TimerButton = styled.button`
     margin-right: 0;
   }
 
-  ${props => props.green && css`
-    background-color: #5CAB7D;
-    border-bottom: 2px solid #5A9367;
-  `};
+  ${props => props.isRunning && css`
+    border-color: #f15c5c;
+    color: #f15c5c;
+  `}
+`;
 
-  ${props => props.red && css`
-    background-color: #EC6A5C;
-    border-bottom: 2px solid #C65146;
-  `};
+const ClearButtonAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
 
-  ${props => props.yellow && css`
-    background-color: #fdc23e;
-    border-bottom: 2px solid #f9a11b;
-    color: ${colors.blackRock};
-  `};
+  100% {
+    opacity: 1;
+    transform: scaleX(1)
+  }
+`;
+
+export const ClearButton = styled.button`
+  animation: ${ClearButtonAnimation} 0.2s;
+  background-color: transparent;
+  border: 1px solid ${colors.blackRock};
+  border-radius: 8px;
+  color: ${colors.blackRock};
+  font-size: 14px;
+  margin-left: 1em;
+  padding: 8px 16px;
+  transform-origin: left;
+`;
+
+const SubtractButtonAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 `;
 
 export const SubtractButton = styled.button`
-  background-color: ${colors.summerSky};
-  border: none;
+  animation: ${SubtractButtonAnimation} 0.8s;
+  background-color: white;
+  border: 1px solid #56A902;
   border-radius: 8px;
-  color: ${colors.white};
+  color: #56A902;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 1.5em;
   padding: 8px 16px;
   transition: background-color 0.2s ease-in-out;
 

@@ -5,6 +5,7 @@ export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 `;
 
 export const Checkbox = styled.input`
@@ -14,51 +15,53 @@ export const Checkbox = styled.input`
 export const CheckboxLabel = styled.label`
   align-items: center;
   display: flex;
-  background-color: ${colors.solitude};
+  background-color: transparent;
   border-radius: 12px;
   cursor: pointer;
-  height: 15px;
-  margin-bottom: 8px;
+  height: 30px;
+  margin-bottom: 1.5em;
   padding: 8px;
   position: relative;
-  width: 100px;
+  width: 100%;
+  z-index: 5;
 
   &:after {
     content: '';
-    background-color: white;
-    border-radius: 50%;
+    border: 1px solid ${colors.summerSky};
+    border-radius: 12px;
     display: block;
-    height: 20px;
+    height: 30px;
     transition: 0.2s ease-in-out;
     position: absolute;
     left: 8px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
+    width: 50%;
   }
 
   ${props => props.isChecked && css`
     &:after {
-      transform: translateX(82px) translateY(-50%);
+      transform: translateX(100%) translateX(-16px) translateY(-50%);
     }
   `}
 `;
 
-export const Label = styled.button`
+export const Label = styled.span`
   appearance: none;
   background: transparent;
   border: none;
-  cursor: pointer;
+  color: ${colors.nepal};
   font-size: 14px;
+  font-weight: bold;
   text-transform: uppercase;
-  text-align: left;
-  width: 100%;
+  text-align: center;
+  width: 120px;
 
   &:focus {
     outline: none;
   }
 
-  ${props => props.right && css`
-    text-align: right;
+  ${props => props.active && css`
+    color: ${colors.summerSky};
   `}
 `;

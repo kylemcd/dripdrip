@@ -43,7 +43,7 @@ class ShowerPanel extends Component {
       <Container>
         <Toggle
           onChange={this.handleToggleChange.bind(this)}
-          labels={{first: 'Manual', last: 'Timer'}}
+          labels={{first: 'Timer', last: 'Manual'}}
         />
         <EntryContainer>
           {!isChecked ? (

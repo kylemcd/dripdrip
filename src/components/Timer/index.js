@@ -8,7 +8,8 @@ import {
   TimeIndicator,
   TimeIndicatorContainer,
   TimerButton,
-  SubtractButton
+  SubtractButton,
+  ClearButton
 } from './styled';
 
 import {
@@ -29,6 +30,24 @@ class Timer extends Component {
     return setInterval(this.updateTime, 1000)
   }
 
+  toggleTimer = () => {
+    const { isRunning } = this.state;
+
+    if(!isRunning) {
+      this.interval = this.createInterval();
+    
+      this.setState({
+        isRunning: true
+      });
+    } else {
+      clearInterval(this.interval);
+
+      this.setState({
+        isRunning: false
+      })
+    }
+  }
+
   updateTime = () => {
     const { time : prevTime } = this.state;
 
@@ -39,19 +58,12 @@ class Timer extends Component {
     });
   }
 
-  startTimer = () => {
-    this.interval = this.createInterval();
-  }
-
-  stopTimer = () => {
-    clearInterval(this.interval);
-  }
-
   clearTimer = () => {
     clearInterval(this.interval);
 
     this.setState({
-      time: 0
+      time: 0,
+      isRunning: false
     })
   }
 
@@ -82,7 +94,7 @@ class Timer extends Component {
   }
 
   render() {
-    const { time } = this.state;
+    const { time, isRunning } = this.state;
     return (
       <Container>
         <TimeContainer>
@@ -99,11 +111,16 @@ class Timer extends Component {
           </TimeIndicatorContainer>
         </TimeContainer>
         <ButtonContainer>
-          <TimerButton green onClick={() => this.startTimer()}>Start</TimerButton>
-          <TimerButton red onClick={() => this.stopTimer()}>Stop</TimerButton>
-          <TimerButton yellow onClick={() => this.clearTimer()}>Clear</TimerButton>
+          <TimerButton onClick={() => this.toggleTimer()} isRunning={isRunning}>
+            {isRunning ? 'Stop' : 'Start' }
+          </TimerButton>
+          {time > 0 && (
+            <ClearButton yellow onClick={() => this.clearTimer()}>Clear Time</ClearButton>
+          )}
         </ButtonContainer>
-        <SubtractButton onClick={() => this.subtractFromTotal()}>Add to Water Usage</SubtractButton>
+        {time > 0 && (
+          <SubtractButton onClick={() => this.subtractFromTotal()}>Add to Water Usage</SubtractButton>
+        )}
       </Container>
     );
   }

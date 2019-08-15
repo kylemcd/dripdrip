@@ -10,6 +10,7 @@ import {
 
 import { 
   Heading,
+  EntryContainer,
   Container
 } from './styled';
 
@@ -29,16 +30,18 @@ class BottlePanel extends Component {
     const { measurement } = this.context;
     return (
       <Container>
-        <Heading>
-          {measurement === 'liters' ? 
-            'Enter amount of 480 mL bottles'
-            :
-            'Enter amount of 16.9oz bottles'
-          }
-        </Heading>
-        <Counter
-          onSubtract={this.subtractFromTotal.bind(this)}
-        />
+        <EntryContainer>
+          <Heading>
+            {measurement === 'liters' ? 
+              'Enter amount of 480 mL bottles'
+              :
+              'Enter amount of 16.9oz bottles'
+            }
+          </Heading>
+          <Counter
+            onSubtract={this.subtractFromTotal.bind(this)}
+          />
+        </EntryContainer>
       </Container>
     );
   }

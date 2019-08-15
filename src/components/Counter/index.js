@@ -71,7 +71,9 @@ class Counter extends Component {
             +
           </CircleButton>
         </ButtonContainer>
-        <SubtractButton onClick={() => this.subtractFromTotal()}>Add to Water Usage</SubtractButton>
+        {count > 0 && (
+          <SubtractButton onClick={() => this.subtractFromTotal()}>Add to Water Usage</SubtractButton>
+        )}
       </Container>
     );
   }

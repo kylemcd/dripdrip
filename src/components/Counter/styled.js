@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { colors } from '../../utils';
 
 export const Container = styled.div`
@@ -18,37 +18,54 @@ export const CountContainer = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  margin-top: 1.5em;
 `;
 
 export const CircleButton = styled.button`
-  align-items: center;
+  background: white;
+  border: 2px solid ${colors.summerSky};
   border-radius: 50%;
-  font-size: 25px;
+  cursor: pointer;
+  color: ${colors.summerSky};
+  font-size: 36px;
   font-weight: bold;
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  width: 50px;
+  padding: 8px 8px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+  height: 80px;
+  width: 80px;
 
-  ${props => props.green && css`
-    background-color: #5CAB7D;
-  `}
+  &:hover, &:focus {
+    opacity: 0.8;
+    outline: none;
+  }
 
   ${props => props.red && css`
-    background-color: #EC6A5C;
-    margin-right: 2rem;
+    border-color: #f15c5c;
+    color: #f15c5c;
+    margin-right: 0.5em;
   `}
 `;
 
+const SubtractButtonAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`;
+
 export const SubtractButton = styled.button`
-  background-color: ${colors.summerSky};
-  border: none;
+  animation: ${SubtractButtonAnimation} 0.8s;
+  background-color: white;
+  border: 1px solid #56A902;
   border-radius: 8px;
-  color: ${colors.white};
+  color: #56A902;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 10px;
+  margin-top: 1.5em;
   padding: 8px 16px;
   transition: background-color 0.2s ease-in-out;
 
