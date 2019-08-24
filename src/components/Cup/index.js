@@ -41,7 +41,7 @@ class Cup extends Component {
         {({ waterRemaining, measurement }) => (
           <Container>
             <Water percentageRemaining={this.calculatePercentage()}>
-              <TextContainer>
+              <TextContainer reposition={this.calculatePercentage() <= 40 && (100 - this.calculatePercentage())}>
                 <NumberContainer>
                   <Number>{this.formatMeasurement(waterRemaining)}</Number>
                   <Measurement>

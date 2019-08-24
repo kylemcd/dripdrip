@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { colors } from '../../utils';
 
 export const Container = styled.div`
@@ -77,6 +77,12 @@ export const TextContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  
+  ${props => props.reposition && css`
+    position: fixed;
+    top: 40%;
+    transform: translateY(-50%);
+  `}
 `;
 
 export const NumberContainer = styled.div`
@@ -84,6 +90,8 @@ export const NumberContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  $
 `;
 
 export const Number = styled.h1`
