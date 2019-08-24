@@ -36,7 +36,7 @@ export class ResetModal extends Component {
           <CloseButton onClick={() => onClose()} />
           <Content>
             <Title>
-              It looks like it's a new day, if you'd like, you can reset your water total!
+              It looks like it's a new day. If you'd like, you can reset your water total!
             </Title>
             <ButtonContainer>
               <Button red onClick={this.reset.bind(this)}>Reset</Button>

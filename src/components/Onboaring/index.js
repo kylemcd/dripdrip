@@ -62,7 +62,12 @@ export class Onboarding extends Component {
             </FormGroup>
             <FormGroup>
               <Label htmlFor="measurement">
-                Choose the amount of water you want to use today
+                Choose the amount of water you want to use today.
+                {measurement === 'gallons' ? (
+                  ' The average person uses between 80-100 gallons per day. Can you beat that?'
+                ): (
+                  ' The average person uses between 300-375 liters per day. Can you beat that?'
+                )}
               </Label>
               <Field type="number" value={waterTotal} onChange={this.updateTotalAmount.bind(this)} step="0.01"/>
             </FormGroup>
