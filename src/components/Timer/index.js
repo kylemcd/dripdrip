@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import NoSleep from 'nosleep.js';
+var noSleep = new NoSleep();
 
 import {
   Container,
@@ -26,6 +28,22 @@ class Timer extends Component {
   // Declare interval out of state for easier clear
   interval = null;
 
+  componentDidMount = () => {
+    this.noSleepListener()
+  }
+
+  componentWillUnmount = () => {
+    clearInterval(this.interval);
+  }
+
+  noSleepListener = () => {
+    const startButton = this.startButton;
+    startButton.addEventListener('click', function enableNoSleep() {
+      startButton.removeEventListener('click', enableNoSleep, false);
+      noSleep.enable();
+    })
+  }
+
   createInterval = () => {
     return setInterval(this.updateTime, 1000)
   }
@@ -35,13 +53,13 @@ class Timer extends Component {
 
     if(!isRunning) {
       this.interval = this.createInterval();
-    
       this.setState({
         isRunning: true
       });
     } else {
       clearInterval(this.interval);
-
+      noSleep.disable();
+      this.noSleepListener()
       this.setState({
         isRunning: false
       })
@@ -89,10 +107,6 @@ class Timer extends Component {
     closeModal();
   }
 
-  componentWillUnmount = () => {
-    clearInterval(this.interval);
-  }
-
   render() {
     const { time, isRunning } = this.state;
     return (
@@ -111,7 +125,7 @@ class Timer extends Component {
           </TimeIndicatorContainer>
         </TimeContainer>
         <ButtonContainer>
-          <TimerButton onClick={() => this.toggleTimer()} isRunning={isRunning}>
+          <TimerButton onClick={() => this.toggleTimer()} isRunning={isRunning} ref={startButton => this.startButton = startButton}>
             {isRunning ? 'Stop' : 'Start' }
           </TimerButton>
           {time > 0 && (
