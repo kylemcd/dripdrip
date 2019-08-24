@@ -9,7 +9,8 @@ import {
   Select,
   Label,
   Field,
-  Button
+  Button,
+  Paragraph
 } from './styled';
 
 import {
@@ -46,7 +47,10 @@ export class Onboarding extends Component {
       <Container>
         <ModalContainer>
           <Content>
-            <Title>Welcome to dridrip, let's get started!</Title>
+            <Title>Welcome to dripdrip, let's get started!</Title>
+            <Paragraph>
+              For the best experience, add dripdrip to your homescreen!
+            </Paragraph>
             <FormGroup>
               <Label htmlFor="measurement">
                 Select your unit of measurment

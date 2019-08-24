@@ -90,3 +90,9 @@ export const Button = styled.button`
     color: ${colors.summerSky};
   `};
 `;
+
+export const Paragraph = styled.p`
+  color: ${colors.blackRock};
+  font-size: 14px;
+  line-height: 18px;
+`;
