@@ -55,7 +55,7 @@ export class WaterProvider extends Component {
   }
 
   state = {
-    waterRemaining: 48,
+    waterRemaining: 50,
     waterTotal: 50,
     measurement: 'gallons',
     updateWaterAmount: this.updateWaterAmount,

@@ -7,6 +7,8 @@ export { default as Toggle } from './Toggle';
 export { default as TimeEntry } from './TimeEntry';
 export { default as ScreenReader } from './ScreenReader';
 export { default as CustomEntry } from './CustomEntry';
+export { default as ResetModal } from './ResetModal';
+export { default as Onboaring } from './Onboaring';
 
 // Panels
 export { default as ShowerPanel } from './Panels/ShowerPanel';
