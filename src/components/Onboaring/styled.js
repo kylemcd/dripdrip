@@ -15,6 +15,8 @@ export const Container = styled.div`
 export const ModalContainer = styled.div`
   background-color: ${colors.white};
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
