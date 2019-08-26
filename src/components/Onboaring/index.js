@@ -19,6 +19,10 @@ import {
 
 export class Onboarding extends Component {
 
+  state = {
+    stateWaterTotal: 50
+  }
+
   changeMeasurement = (event) => {
     const value = event.target.value;
     const { changeMeasurement } = this.context;
@@ -27,9 +31,9 @@ export class Onboarding extends Component {
   }
 
   updateTotalAmount = (event) => {
-    const value = event.target.value;
-    const { updateTotalAmount } = this.context;
-
+    let value = event.target.value;
+    const { updateTotalAmount, measurement } = this.context;
+    
     updateTotalAmount(value);
   } 
 
@@ -41,8 +45,17 @@ export class Onboarding extends Component {
     onClose();
   }
 
+  updateWaterTotal = (event) => {
+    const value = event.target.value;
+
+    this.setState({
+      stateWaterTotal: value
+    })
+  }
+
   render() {
-    const { measurement, waterTotal } = this.context;
+    const { measurement } = this.context;
+    const { stateWaterTotal } = this.state;
     return (
       <Container>
         <ModalContainer>
@@ -69,7 +82,7 @@ export class Onboarding extends Component {
                   ' The average person uses between 300-375 liters per day. Can you beat that?'
                 )}
               </Label>
-              <Field type="number" value={waterTotal} onChange={this.updateTotalAmount.bind(this)} step="0.01"/>
+              <Field type="number" value={stateWaterTotal} onChange={this.updateWaterTotal.bind(this)} onBlur={this.updateTotalAmount.bind(this)} step="0.01"/>
             </FormGroup>
             <Button blue onClick={this.start.bind(this)}>Let's Go!</Button>
           </Content>
