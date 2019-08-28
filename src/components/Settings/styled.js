@@ -155,3 +155,20 @@ export const Subtext = styled.span`
   font-style: italic;
   margin-top: 0.5em;
 `;
+
+export const BuiltBy = styled.div`
+  background-color: ${colors.solitude};
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+
+  a {
+    color: ${colors.summerSky};
+    text-decoration: none;
+  }
+`;

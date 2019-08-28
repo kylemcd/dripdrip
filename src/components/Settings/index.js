@@ -14,7 +14,8 @@ import {
   FormGroup,
   Field,
   Button,
-  Subtext
+  Subtext,
+  BuiltBy
 } from './styled';
 
 import {
@@ -100,6 +101,9 @@ export class Settings extends Component {
                 Warning, no going back after you click this.
               </Subtext>
             </FormGroup>
+            <BuiltBy>
+              Built by <a href="https://twitter.com/designbykyle">@designbykyle</a>
+            </BuiltBy>
           </Container>
         </Modal>
       </Fragment>
